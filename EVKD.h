@@ -10,8 +10,8 @@ class EVKD {
         EVKD(EVKD *);
 
         char *getDaten();
-        void setNext(EVKD);
+        void setNext(EVKD*);
 
-        EVKD operator ==(EVKD);
-        EVKD operator >(EVKD);
+        bool operator ==(EVKD);
+        bool operator >(EVKD);
 };

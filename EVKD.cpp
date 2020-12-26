@@ -1,4 +1,5 @@
 #include "EVKD.h"
+#include <string.h>
 
 EVKD::EVKD(char *LPSZDaten,  EVKD *N){
     //TODO
@@ -12,14 +13,14 @@ char *EVKD::getDaten(){
     //TODO
 }
 
-void EVKD::setNext(EVKD){
-    //TODO
+void EVKD::setNext(EVKD *next){
+    this->Next = next;
 }
 
-EVKD EVKD::operator ==(EVKD){
-    //TODO
+bool EVKD::operator ==(EVKD in){
+    return (strcmp(*this->Daten, *in.Daten) == 0);
 }
 
-EVKD EVKD::operator >(EVKD){
+bool EVKD::operator >(EVKD){
     //TODO
 }   
