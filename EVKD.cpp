@@ -10,7 +10,7 @@ EVKD::EVKD(EVKD *copy){
 }
 
 char *EVKD::getDaten(){
-    //TODO
+    return *(new char*(*this->Daten));
 }
 
 void EVKD::setNext(EVKD *next){
