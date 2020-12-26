@@ -6,7 +6,9 @@ EVKD::EVKD(char *LPSZDaten,  EVKD *N){
 }
 
 EVKD::EVKD(EVKD *copy){
-    //TODO
+    this->Anz = copy->Anz;
+    setNext(copy);
+    this->Daten = (new char *(*copy->Daten)); //TODO
 }
 
 char *EVKD::getDaten(){
