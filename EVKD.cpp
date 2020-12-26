@@ -21,6 +21,6 @@ bool EVKD::operator ==(EVKD in){
     return (strcmp(*this->Daten, *in.Daten) == 0);
 }
 
-bool EVKD::operator >(EVKD){
-    //TODO
+bool EVKD::operator >(EVKD in){
+    return (strcmp(*this->Daten, *in.Daten) > 0);
 }   
