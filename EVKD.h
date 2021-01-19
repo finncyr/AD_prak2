@@ -1,12 +1,12 @@
 
 class EVKD {
     private:
-        char *Daten[];
+        char *Daten;
         int Anz;
         EVKD *Next;
 
     public:
-        EVKD() : Daten({}), Anz(0), Next(nullptr){};
+        EVKD() : Daten(nullptr), Anz(0), Next(nullptr){};
         EVKD(char *LPSZDaten,  EVKD *N);
         EVKD(EVKD *);
 

@@ -4,8 +4,10 @@
 EVKD::EVKD(char *LPSZDaten,  EVKD *N){
     this->Anz = (*(&LPSZDaten + 1) - LPSZDaten) - 1;
     this->Daten = new char[this->Anz];
+    this->Next = N;
+
     for(int i = 0; i < this->Anz; i++){
-        (*this).Daten[0][i] = LPSZDaten[i];
+        this->Daten[i] = LPSZDaten[i];
     }
 }
 
