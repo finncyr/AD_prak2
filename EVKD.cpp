@@ -2,7 +2,7 @@
 #include <string.h>
 
 EVKD::EVKD(char *LPSZDaten,  EVKD *N){
-    //TODO
+    this->Daten = LPSZDaten;
 }
 
 EVKD::EVKD(EVKD *copy){

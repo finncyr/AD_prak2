@@ -10,7 +10,7 @@ void TEXT::zeigDich(){
 
 
 void TEXT::anhaenge(char *ln){
-    //TODO
+    
 }
 
 void TEXT::einfuegeSortiert (EVKD *In, int Max){

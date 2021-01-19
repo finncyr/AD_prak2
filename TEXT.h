@@ -1,5 +1,7 @@
 #include <EVKD.h>
 
+#define NULL nullptr
+
 class TEXT{
     private:
         EVKD *Start;
@@ -7,6 +9,7 @@ class TEXT{
     public:
         int Anz;
 
+        TEXT() : Start(NULL), Anz(0){};
         TEXT(EVKD *, int);
 
         void zeigDich();
