@@ -6,10 +6,13 @@ class EVKD {
         EVKD *Next;
 
     public:
+        EVKD() : Daten({}), Anz(0), Next(nullptr){};
         EVKD(char *LPSZDaten,  EVKD *N);
         EVKD(EVKD *);
 
         char *getDaten();
+        EVKD *getNext();
+        void setDaten(char *);
         void setNext(EVKD*);
 
         bool operator ==(EVKD);

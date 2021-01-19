@@ -2,7 +2,11 @@
 #include <string.h>
 
 EVKD::EVKD(char *LPSZDaten,  EVKD *N){
-    this->Daten = LPSZDaten;
+    this->Anz = (*(&LPSZDaten + 1) - LPSZDaten) - 1;
+    this->Daten = new char[this->Anz];
+    for(int i = 0; i < this->Anz; i++){
+        (*this).Daten[0][i] = LPSZDaten[i];
+    }
 }
 
 EVKD::EVKD(EVKD *copy){
@@ -13,6 +17,14 @@ EVKD::EVKD(EVKD *copy){
 
 char *EVKD::getDaten(){
     return *(new char*(*this->Daten));
+}
+
+EVKD *EVKD::getNext(){
+    return this->Next;
+}
+
+void EVKD::setDaten(char *Data){
+    this->Anz = (*(&LPSZDaten + 1) - LPSZDaten) - 1;
 }
 
 void EVKD::setNext(EVKD *next){
