@@ -5,6 +5,7 @@ TEXT::TEXT()
 {
 	start = nullptr;
 	anz = 0;
+	sorted = 1;
 }
 
 TEXT::~TEXT()
@@ -24,6 +25,7 @@ void TEXT::anhaenge(char *In)
 		}
 		target->setNext(new EVKD(In));
 		this->anz++;
+		count_sorted();
 	}
 	else
 	{
@@ -42,6 +44,9 @@ EVKD *TEXT::loesche(int pos)
 	else if (pos == 1)
 	{
 		start = start->getNext();
+		this->anz--;
+		if (pos < sorted)
+			this->sorted--;
 		return iter;
 	}
 	else
@@ -52,6 +57,9 @@ EVKD *TEXT::loesche(int pos)
 		}
 		EVKD *out = iter->getNext();
 		iter->setNext(out->getNext());
+		this->anz--;
+		if (pos <= sorted)
+			this->sorted--;
 		return out;
 	}
 }
@@ -67,5 +75,54 @@ void TEXT::zeigDich()
 			iter = iter->getNext();
 		}
 		std::cout << iter->getDaten() << std::endl;
+	}
+}
+
+void TEXT::count_sorted()
+{
+	EVKD *iter = start;
+	int i = 1;
+	while (iter->getNext() != nullptr && *(iter->getNext()) > *iter)
+	{
+		i++;
+		iter = iter->getNext();
+	}
+	this->sorted = i;
+}
+
+void TEXT::einfuegeSortiert(EVKD *in, int max)
+{
+	this->anz++;
+
+	//in is smallest
+	if (!(*in > *start))
+	{
+		in->setNext(start);
+		this->start = in;
+		count_sorted();
+		return;
+	}
+
+	//in is larger than start
+	EVKD *iter = start;
+	for (int i = 1; i < max-1; i++)
+	{
+		if (!(*(iter->getNext()) > *in))
+		{
+			iter = iter->getNext();
+		}
+	}
+	in->setNext(iter->getNext());
+	iter->setNext(in);
+	count_sorted();
+}
+
+void TEXT::iSort()
+{
+	for (int i = 0; i < this->anz; i++)
+	{
+		this->einfuegeSortiert(this->loesche(i + 1), this->sorted);
+		//std::cout << std::endl;
+		//this->zeigDich(); //Debugging, remove
 	}
 }
