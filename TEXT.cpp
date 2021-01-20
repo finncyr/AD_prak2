@@ -10,6 +10,19 @@ TEXT::TEXT()
 
 TEXT::~TEXT()
 {
+	EVKD *adresses[anz - 1];
+	EVKD *iter = start;
+	int i = 0;
+	while (iter->getNext() != nullptr)
+	{
+		adresses[i++] = iter->getNext();
+		iter = iter->getNext();
+	}
+	for (auto &&i : adresses)
+	{
+		delete i;
+	}
+
 	//TODO: Cleanup Nexts
 	delete start;
 }
@@ -105,7 +118,7 @@ void TEXT::einfuegeSortiert(EVKD *in, int max)
 
 	//in is larger than start
 	EVKD *iter = start;
-	for (int i = 1; i < max-1; i++)
+	for (int i = 1; i < max - 1; i++)
 	{
 		if (!(*(iter->getNext()) > *in))
 		{
