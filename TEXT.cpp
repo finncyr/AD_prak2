@@ -66,5 +66,6 @@ void TEXT::zeigDich()
 			std::cout << iter->getDaten() << std::endl;
 			iter = iter->getNext();
 		}
+		std::cout << iter->getDaten() << std::endl;
 	}
 }

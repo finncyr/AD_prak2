@@ -28,7 +28,7 @@ EVKD::~EVKD()
 
 char *EVKD::getDaten()
 {
-	static char out[anz + 1]; //This won't work
+	char *out = new char[anz + 1]; //This is never freed
 	for (int i = 0; i < anz; i++)
 	{
 		out[i] = daten[i];
