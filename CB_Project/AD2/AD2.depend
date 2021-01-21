@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1611224482 source:b:\_git\ad_prak2\cb_project\ad2\ad_prakt2.cpp
+	"TEXT.h"
+	<iostream>
+
+1611228674 b:\_git\ad_prak2\cb_project\ad2\text.h
+	"EVKD.h"
+
+1611224482 b:\_git\ad_prak2\cb_project\ad2\evkd.h
+
+1611224482 source:b:\_git\ad_prak2\cb_project\ad2\evkd.cpp
+	"EVKD.h"
+	<cstring>
+
+1611228712 source:b:\_git\ad_prak2\cb_project\ad2\text.cpp
+	"TEXT.h"
+	<iostream>
+
