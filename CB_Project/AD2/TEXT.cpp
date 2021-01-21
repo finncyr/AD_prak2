@@ -27,6 +27,11 @@ TEXT::~TEXT()
 	delete start;
 }
 
+int TEXT::getSorted()
+{
+    return this->sorted;
+}
+
 void TEXT::anhaenge(char *In)
 {
 	EVKD *target = start;

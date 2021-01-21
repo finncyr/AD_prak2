@@ -3,7 +3,7 @@
 	"TEXT.h"
 	<iostream>
 
-1611224482 b:\_git\ad_prak2\cb_project\ad2\text.h
+1611228674 b:\_git\ad_prak2\cb_project\ad2\text.h
 	"EVKD.h"
 
 1611224482 b:\_git\ad_prak2\cb_project\ad2\evkd.h
@@ -12,7 +12,7 @@
 	"EVKD.h"
 	<cstring>
 
-1611225509 source:b:\_git\ad_prak2\cb_project\ad2\text.cpp
+1611228712 source:b:\_git\ad_prak2\cb_project\ad2\text.cpp
 	"TEXT.h"
 	<iostream>
 

@@ -15,6 +15,7 @@ int main()
     TEXT *text = new TEXT();
     char *Name[] = {"Schmitz, Josef", "Mueller, Josi", "Schmitz, Anna", "Mueller, Josef", "Schmitz, Josi", "Mueller, Anna", "Meier, Josef", "Zacher, Josi", "Anker, Anna"};
     int menuchoice = 0;
+    int loeschpos = 0;
     std::string import;
     char *importchar = new char[100];
 
@@ -65,18 +66,36 @@ int main()
             break;
 
         case 4:
+            std::cout << "Namen zum Anhaengen eingeben: ";
+            getchar();
+            std::getline(std::cin, import);
+            strcpy(importchar, import.c_str());
+            text->einfuegeSortiert(new EVKD(importchar), text->getSorted());
+            textSeperator();
+            break;
 
+        case 5:
+            std::cout << "Position eingeben: ";
+            std::cin >> loeschpos;
+            text->loesche(loeschpos);
+            textSeperator();
+            break;
 
+        case 6:
+            text->iSort();
+            textSeperator();
+            break;
+
+        case 12:
+            break;
         default:
             menuchoice = 12;
             break;
         }
 	}
 
-
-	//text->zeigDich();
-	//text->iSort();
-	//std::cout << std::endl;
-	//text->zeigDich();
 	delete text;
+	delete importchar;
+
+	return 0;
 }
