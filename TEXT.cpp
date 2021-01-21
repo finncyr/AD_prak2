@@ -27,6 +27,11 @@ TEXT::~TEXT()
 	delete start;
 }
 
+int TEXT::getSorted()
+{
+    return this->sorted;
+}
+
 void TEXT::anhaenge(char *In)
 {
 	EVKD *target = start;
@@ -84,10 +89,10 @@ void TEXT::zeigDich()
 	{
 		while (iter->getNext() != nullptr)
 		{
-			std::cout << iter->getDaten() << std::endl;
+			std::cout << iter << ": " << iter->getDaten() << std::endl;
 			iter = iter->getNext();
 		}
-		std::cout << iter->getDaten() << std::endl;
+		std::cout << iter << ": " << iter->getDaten() << std::endl;
 	}
 }
 

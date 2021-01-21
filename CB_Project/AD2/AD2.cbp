@@ -32,7 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="AD_Prakt2.cpp" />
+		<Unit filename="EVKD.cpp" />
+		<Unit filename="EVKD.h" />
+		<Unit filename="TEXT.cpp" />
+		<Unit filename="TEXT.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
